@@ -1,0 +1,10 @@
+<form (submit)="addHabit()">
+  <input [(ngModel)]="newHabit" name="habit" placeholder="Add habit" required />
+  <button type="submit">Add</button>
+</form>
+<div *ngFor="let habit of habits" class="habit">
+  <span>{{ habit.name }}</span>
+  <button (click)="markComplete(habit)">Mark as Done</button>
+  <app-calendar-heatmap [dates]="habit.dates"></app-calendar-heatmap>
+  <div>Streak: {{ getStreak(habit.dates) }}</div>
+</div>
