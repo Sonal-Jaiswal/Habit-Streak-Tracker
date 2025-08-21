@@ -21,7 +21,7 @@ services:
     name: habit-streak-frontend
     env: static
     plan: free
-    buildCommand: cd frontend && npm install && npm run build:prod
+    buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist/habit-streak-frontend
     envVars:
       - key: NODE_ENV

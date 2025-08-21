@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from '../../environments/environment';
 
 export interface Habit {
   _id: string;
@@ -48,7 +49,7 @@ export interface UpdateHabitData {
   providedIn: 'root'
 })
 export class HabitService {
-  private readonly API_URL = 'http://localhost:3000/api';
+  private readonly API_URL = environment.apiUrl;
 
   constructor(
     private http: HttpClient,
